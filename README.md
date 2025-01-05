@@ -1,7 +1,7 @@
 # NanoSploit
 **Simple & Open Source JJSploit parody**
 
-## 🫡 Some info, idk.
+## 😍 About executor's DLL
 > Uses : `Xeno (FluxTeam API)`
 > 
 > UNC Statistics : `89 UNC`
@@ -15,6 +15,6 @@
 > 
 > Turned off `Windows Defender` (you can turn it off by [MakuTweaker](https://github.com/AdderlyMark/adderly.github.io/raw/main/soft/MakuTweaker%20Setup.exe))
 
-**If you want to download release (builded version), check out git Releases**
+**If you want to download release (builded version), check out git [Releases](https://github.com/alexskid/NanoSploit/releases)**
 
-**And also, you can find out Bootstapper source code in the bootstapper folder**
+**And also, you can find out Bootstapper source code [in the bootstapper folder](https://github.com/alexskid/NanoSploit/tree/main/bootstapper)**
