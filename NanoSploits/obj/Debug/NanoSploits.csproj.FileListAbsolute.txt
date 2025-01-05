@@ -1,0 +1,15 @@
+C:\Users\alexs\source\repos\Bootstapper\NanoSploits\NanoSploits\obj\Debug\NanoSploits.csproj.AssemblyReference.cache
+C:\Users\alexs\source\repos\Bootstapper\NanoSploits\NanoSploits\obj\Debug\NanoSploits.Properties.Resources.resources
+C:\Users\alexs\source\repos\Bootstapper\NanoSploits\NanoSploits\obj\Debug\NanoSploits.csproj.GenerateResource.cache
+C:\Users\alexs\source\repos\Bootstapper\NanoSploits\NanoSploits\obj\Debug\NanoSploits.csproj.CoreCompileInputs.cache
+C:\Users\alexs\source\repos\Bootstapper\NanoSploits\NanoSploits\bin\Debug\AceWinforms.dll
+C:\Users\alexs\source\repos\Bootstapper\NanoSploits\NanoSploits\bin\Debug\Fluxx.dll
+C:\Users\alexs\source\repos\Bootstapper\NanoSploits\NanoSploits\bin\Debug\Siticone.UI.dll
+C:\Users\alexs\source\repos\Bootstapper\NanoSploits\NanoSploits\bin\Debug\AceWinforms.pdb
+C:\Users\alexs\source\repos\Bootstapper\NanoSploits\NanoSploits\bin\Debug\AceWinforms.dll.config
+C:\Users\alexs\source\repos\Bootstapper\NanoSploits\NanoSploits\obj\Debug\NanoSplo.C627ED2F.Up2Date
+C:\Users\alexs\source\repos\Bootstapper\NanoSploits\NanoSploits\bin\Debug\NanoSploit.exe.config
+C:\Users\alexs\source\repos\Bootstapper\NanoSploits\NanoSploits\bin\Debug\NanoSploit.exe
+C:\Users\alexs\source\repos\Bootstapper\NanoSploits\NanoSploits\bin\Debug\NanoSploit.pdb
+C:\Users\alexs\source\repos\Bootstapper\NanoSploits\NanoSploits\obj\Debug\NanoSploit.exe
+C:\Users\alexs\source\repos\Bootstapper\NanoSploits\NanoSploits\obj\Debug\NanoSploit.pdb
