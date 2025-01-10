@@ -75,20 +75,21 @@
             // siticoneButton3
             // 
             this.siticoneButton3.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.siticoneButton3.ButtonMode = Siticone.UI.WinForms.Enums.ButtonMode.ToogleButton;
             this.siticoneButton3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.siticoneButton3.CheckedState.Parent = this.siticoneButton3;
             this.siticoneButton3.CustomImages.Parent = this.siticoneButton3;
             this.siticoneButton3.FillColor = System.Drawing.SystemColors.Highlight;
-            this.siticoneButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.siticoneButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.siticoneButton3.ForeColor = System.Drawing.Color.White;
-            this.siticoneButton3.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.siticoneButton3.HoveredState.FillColor = System.Drawing.Color.CornflowerBlue;
             this.siticoneButton3.HoveredState.Parent = this.siticoneButton3;
-            this.siticoneButton3.Location = new System.Drawing.Point(702, 0);
+            this.siticoneButton3.Location = new System.Drawing.Point(674, 0);
             this.siticoneButton3.Name = "siticoneButton3";
             this.siticoneButton3.ShadowDecoration.Parent = this.siticoneButton3;
-            this.siticoneButton3.Size = new System.Drawing.Size(144, 72);
+            this.siticoneButton3.Size = new System.Drawing.Size(177, 72);
             this.siticoneButton3.TabIndex = 3;
-            this.siticoneButton3.Text = "Dark Theme";
+            this.siticoneButton3.Text = "MultiRoblox";
             this.siticoneButton3.Click += new System.EventHandler(this.siticoneButton3_Click);
             // 
             // siticoneButton2
@@ -101,7 +102,7 @@
             this.siticoneButton2.FillColor = System.Drawing.SystemColors.Highlight;
             this.siticoneButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.siticoneButton2.ForeColor = System.Drawing.Color.White;
-            this.siticoneButton2.HoveredState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.siticoneButton2.HoveredState.FillColor = System.Drawing.Color.CornflowerBlue;
             this.siticoneButton2.HoveredState.Parent = this.siticoneButton2;
             this.siticoneButton2.Location = new System.Drawing.Point(849, 0);
             this.siticoneButton2.Name = "siticoneButton2";
@@ -161,7 +162,7 @@
             this.siticoneElipse.BorderRadius = 10;
             this.siticoneElipse.TargetControl = this;
             // 
-            // Form1
+            // Interface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -169,7 +170,7 @@
             this.Controls.Add(this.placeholder);
             this.Controls.Add(this.dragPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "Interface";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NanoSploit";
             this.dragPanel.ResumeLayout(false);

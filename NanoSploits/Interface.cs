@@ -11,6 +11,9 @@ using System.Windows.Forms;
 using Siticone.UI.WinForms;
 using NanoPages;
 using Zorara;
+using System.Threading;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using System.Reflection.Emit;
 
 namespace NanoForm
 {
@@ -18,18 +21,22 @@ namespace NanoForm
     {
         private mainPage mainPageInstance;
         private homePage homePageInstance;
-
+        private Mutex MultiBLOX;
         public Interface()
         {
             InitializeComponent();
-            checkState = new Timer();
+            checkState = new System.Windows.Forms.Timer();
             checkState.Interval = 1000;
             checkState.Tick += checkState_Tick;
             checkState.Start();
             homePageInstance = new homePage();
             ChangeControl(homePageInstance);
+            MultiBLOX = new Mutex(false, "ROBLOX_singletonMutex");
         }
+        private void ArgonAttachMethod()
+        {
 
+        }
         private void ChangeControl(UserControl userControl)
         {
             userControl.Dock = DockStyle.Fill;
@@ -99,17 +106,25 @@ namespace NanoForm
 
         private void siticoneButton3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("In development!");
-            //if (siticoneButton3.Checked) { 
-            //    placeholder.BackColor = Color.FromArgb(50,50,50);
-            //    dragPanel.BackColor = Color.FromArgb(45, 45, 45);
-            //    siticoneButton1.FillColor = Color.FromArgb(50,50,50);
-            //    siticoneButton2.FillColor = Color.FromArgb(50, 50, 50);
-            //    siticoneButton3.FillColor = Color.FromArgb(50, 50, 50);
-            //}
-            //else { 
-            //    TopMost = false;
-            //}
+            if (siticoneButton3.Checked) {
+                if (MultiBLOX.WaitOne(0))
+                {
+                    MessageBox.Show("MultiRoblox is started! [WARNING: CAN INCLUDE A BUGS]", "NanoMultiRoblox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Close roblox before enable!", "NanoMultiRoblox", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    siticoneButton3.Checked = false;
+                }
+            }
+            else {
+                MessageBox.Show("Shutting down...", "NanoMultiRoblox", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (MultiBLOX.WaitOne(0))
+                {
+                    CoreFunctions.KillRoblox();
+                    MultiBLOX.ReleaseMutex();
+                }
+            }
         }
     }
 

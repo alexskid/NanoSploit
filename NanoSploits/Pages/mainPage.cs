@@ -28,6 +28,7 @@ namespace NanoPages
         private void showExecutorPanel()
         {
             executorPanel.Dock = DockStyle.Fill;
+            executorPanel.BringToFront();
             scriptPanel.Visible = false;
             scriptPanel.AutoScroll = false;
             executorPanel.Visible = true;
@@ -35,6 +36,7 @@ namespace NanoPages
         private void showScriptsPanel()
         {
             scriptPanel.Dock = DockStyle.Fill;
+            scriptPanel.BringToFront();
             scriptPanel.Visible = true;
             scriptPanel.AutoScroll = true;
             executorPanel.Visible = false;
@@ -93,7 +95,7 @@ namespace NanoPages
 
         private void siticoneButton7_Click(object sender, EventArgs e)
         {
-            CoreFunctions.ExecuteScript("loadstring(game:HttpGet(\"https://cdn.wearedevs.net/scripts/OwlHub.txt\"))()");
+            CoreFunctions.ExecuteScript("loadstring(game:HttpGet(\"https://cdn.wearedevs.net/scripts/Click%20Teleport.txt\"))()");
         }
 
         private void executeBtnPage_Click(object sender, EventArgs e)
@@ -147,6 +149,11 @@ namespace NanoPages
         {
             MessageBox.Show($"Dear {Environment.UserName}, our chat is not ready. But we have telegram channel!", "Did developer is stupid?", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             Process.Start("https://t.me/nano4free");
+        }
+
+        private void siticoneButton14_Click(object sender, EventArgs e)
+        {
+            CoreFunctions.ExecuteScript("loadstring(game:HttpGet(\"https://pastefy.app/wa3v2Vgm/raw\"))() ");
         }
     }
 }
