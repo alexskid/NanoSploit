@@ -10,7 +10,6 @@ class Program
     static void Main(string[] args)
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
-        // Большая ASCII надпись
         Console.ForegroundColor = ConsoleColor.DarkCyan;
         Console.WriteLine(@"
             ##    ##    ###    ##    ##  #######  
