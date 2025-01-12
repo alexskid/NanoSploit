@@ -1,19 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Siticone.UI.WinForms;
 using NanoPages;
 using Zorara;
 using System.Threading;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
-using System.Reflection.Emit;
 
 namespace NanoForm
 {
@@ -33,10 +24,6 @@ namespace NanoForm
             ChangeControl(homePageInstance);
             MultiBLOX = new Mutex(false, "ROBLOX_singletonMutex");
         }
-        private void ArgonAttachMethod()
-        {
-
-        }
         private void ChangeControl(UserControl userControl)
         {
             userControl.Dock = DockStyle.Fill;
@@ -55,14 +42,9 @@ namespace NanoForm
 
         private void checkState_Tick(object sender, EventArgs e)
         {
+            CoreFunctions.SetAutoInject(true);
             bool isInjected = CoreFunctions.IsInjected();
             bool isRobloxOpen = CoreFunctions.IsRobloxOpen();
-
-            if (isRobloxOpen && !isInjected)
-            {
-                CoreFunctions.Inject();
-            }
-
             if (isInjected)
             {
                 statusLabel.Text = "online";

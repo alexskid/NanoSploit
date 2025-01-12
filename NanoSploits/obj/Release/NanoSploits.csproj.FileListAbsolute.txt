@@ -25,3 +25,4 @@ C:\Users\skid\Documents\NanoSploits\NanoSploits\obj\Release\NanoSplo.C627ED2F.Up
 C:\Users\skid\Documents\NanoSploits\NanoSploits\obj\Release\NanoSploit.exe
 C:\Users\skid\Documents\NanoSploits\NanoSploits\obj\Release\NanoSploit.pdb
 C:\Users\skid\Documents\NanoSploits\NanoSploits\obj\Release\NanoPages.homePage.resources
+C:\Users\skid\Documents\NanoSploits\NanoSploits\bin\Release\Fluxx.dll

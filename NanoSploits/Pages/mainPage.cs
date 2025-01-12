@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Zorara;
 
@@ -20,9 +13,9 @@ namespace NanoPages
             InitializeComponent();
             showScriptsPanel();
 
-            codeEditor1.Theme = "monokai";
+            codeEditor1.Theme = "twilight";
             codeEditor1.HighlighterMode = "lua";
-            codeEditor1.Text = "-- NanoSploit 2025\nprint(\"Nano New\")";
+            codeEditor1.Text = "print(\"Nano got updated again\")\n-- Now on yougame.biz!";
             codeEditor1.Load();
         }
         private void showExecutorPanel()
@@ -110,7 +103,13 @@ namespace NanoPages
 
         private void siticoneButton9_Click(object sender, EventArgs e)
         {
-            CoreFunctions.ExecuteScript(codeEditor1.Text);
+            try
+            {
+                CoreFunctions.ExecuteScript(codeEditor1.Text);
+            }
+            catch (Exception ex) {
+                MessageBox.Show($"Got a error while doing this action, make sure your av is disabled : \n{ex.Message}", "NanoSploit", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
         }
 
         private void siticoneButton10_Click(object sender, EventArgs e)

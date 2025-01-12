@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace NanoPages
@@ -19,7 +13,23 @@ namespace NanoPages
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MessageBox.Show("Doesn't ready rn");
+
+        }
+
+        private void siticoneButton13_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Own API in development, because fluxx api is buggy asf", "NanoSploit", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //DialogResult warning = MessageBox.Show("Hey! If you do this, AutoInject will be disabled. You are sure about that?", "NanoSploit", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+            //if (warning == DialogResult.Yes)
+            //{
+            //    CoreFunctions.SetAutoInject(false);
+            //    attachManual.Text = "Attach";
+            //    CoreFunctions.Inject();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Action aborted", "NanoSploit", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
         }
     }
 }

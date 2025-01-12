@@ -32,13 +32,16 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>image_2025-01-11_23-23-30.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AceWinforms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Release\AceWinforms.dll</HintPath>
     </Reference>
     <Reference Include="Fluxx">
-      <HintPath>..\..\..\..\..\OneDrive\Documents\Fluxx.dll</HintPath>
+      <HintPath>..\..\..\Downloads\FluxTeam\Fluxx.dll</HintPath>
     </Reference>
     <Reference Include="Siticone.UI">
       <HintPath>..\..\..\..\..\Downloads\Siticone.UI.dll</HintPath>
@@ -110,6 +113,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\play-button-svgrepo-com.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="image_2025-01-11_23-23-30.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
