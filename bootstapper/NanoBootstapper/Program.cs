@@ -24,13 +24,15 @@ class Program
 
         while (true)
         {
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("\nChoose action:");
-            Console.WriteLine("1. Check out Windows Defender status");
-            Console.WriteLine("2. Download executor");
-            Console.WriteLine("3. Check out GitHub repository");
-            Console.WriteLine("0. Exit");
+            Console.Title = "NanoBootstrapper • Executor installation";
             Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\nPlease, choose action :");
+            Console.WriteLine(" 1 » Check Windows Defender status");
+            Console.WriteLine(" 2 » Download executor");
+            Console.WriteLine(" 3 » Check out GitHub repository");
+            Console.WriteLine(" 0 » Exit");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write("Choose: ");
             var choice = Console.ReadLine();
 
             switch (choice)
@@ -39,10 +41,11 @@ class Program
                     CheckAntivirus();
                     break;
                 case "2":
+                    CheckAntivirus();
                     InstallSoftware();
                     break;
                 case "3":
-                    CloneGithubProject();
+                    GithubPage();
                     break;
                 case "0":
                     return;
@@ -73,24 +76,25 @@ class Program
             if (string.IsNullOrWhiteSpace(output))
             {
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("Windows defender is turned off, you can continue installation");
-                Console.ReadKey();
+                Console.WriteLine("[+] Windows defender is turned off, you can continue installation");
             }
             else
             {
+                Console.Title = "Failture :(";
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Windows defender is turned on, you need to turn it off before installation");
+                Console.WriteLine("[X] Windows defender is turned on, we can't continue installation");
                 Console.WriteLine(output);
-                Console.WriteLine("Press any key for redirect....");
+                Console.Write("\nPress any key for redirect....");
                 Console.ReadKey();
                 Process.Start("https://github.com/pgkt04/defender-control/releases/tag/v1.5");
+                Environment.Exit(0);
             }
         }
     }
     static void InstallSoftware()
     {
-        Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine("Downloading process is started, please DO NOT close software");
+        Console.ForegroundColor = ConsoleColor.DarkYellow;
+        Console.WriteLine("[!] Downloading process is started, please DO NOT close software");
         string url = "https://github.com/alexskid/NanoSploit/raw/refs/heads/main/lasest/nano.zip";
         string filePath = "nano.zip";
         DownloadFile(url, filePath);
@@ -102,7 +106,7 @@ class Program
         {
             webClient.DownloadFile(url, filePath);
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("Archive with the cheat downloaded! Started extracting.....");
+            Console.WriteLine("[i] Archive with the cheat downloaded! Started extracting.....");
         }
     }
 
@@ -111,23 +115,27 @@ class Program
         try
         {
             ZipFile.ExtractToDirectory(filePath, extractPath);
+            Console.Title = "Ready!";
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Extracted! Executor now is ready for use! Press any key to start nano and close software");
+            Console.WriteLine("[+] Extracted! Executor now is ready for use!");
             File.Delete(filePath);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("\nPress any key to start nano and close software.....");
             Console.ReadKey();
             Process.Start(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Nano/Release/", "NanoSploit.exe"));
             Environment.Exit(0);
         }
         catch (Exception ex)
         {
+            Console.Title = "Failture :(";
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Got a error : " + ex.Message);
+            Console.ReadKey();
         }
     }
 
-    static void CloneGithubProject()
+    static void GithubPage()
     {
-        Process.Start("https://google.com");
-        Console.ReadKey();
+        Process.Start("https://github.com/alexskid/NanoSploit/tree/main");
     }
 }

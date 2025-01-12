@@ -5,3 +5,10 @@ C:\Users\alexs\source\repos\Bootstapper\NanoBootstapper\NanoBootstapper\obj\Debu
 C:\Users\alexs\source\repos\Bootstapper\NanoBootstapper\NanoBootstapper\obj\Debug\NanoBootstapper.csproj.CoreCompileInputs.cache
 C:\Users\alexs\source\repos\Bootstapper\NanoBootstapper\NanoBootstapper\obj\Debug\NanoBootstapper.exe
 C:\Users\alexs\source\repos\Bootstapper\NanoBootstapper\NanoBootstapper\obj\Debug\NanoBootstapper.pdb
+D:\bootstapper\NanoBootstapper\bin\Debug\NanoBootstapper.exe.config
+D:\bootstapper\NanoBootstapper\bin\Debug\NanoBootstapper.exe
+D:\bootstapper\NanoBootstapper\bin\Debug\NanoBootstapper.pdb
+D:\bootstapper\NanoBootstapper\obj\Debug\NanoBootstapper.csproj.AssemblyReference.cache
+D:\bootstapper\NanoBootstapper\obj\Debug\NanoBootstapper.csproj.CoreCompileInputs.cache
+D:\bootstapper\NanoBootstapper\obj\Debug\NanoBootstapper.exe
+D:\bootstapper\NanoBootstapper\obj\Debug\NanoBootstapper.pdb

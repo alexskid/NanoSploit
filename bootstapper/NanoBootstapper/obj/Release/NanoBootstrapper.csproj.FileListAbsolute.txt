@@ -1,0 +1,7 @@
+D:\bootstapper\NanoBootstapper\bin\Release\NanoBootstrapper.exe.config
+D:\bootstapper\NanoBootstapper\bin\Release\NanoBootstrapper.exe
+D:\bootstapper\NanoBootstapper\bin\Release\NanoBootstrapper.pdb
+D:\bootstapper\NanoBootstapper\obj\Release\NanoBootstrapper.csproj.AssemblyReference.cache
+D:\bootstapper\NanoBootstapper\obj\Release\NanoBootstrapper.csproj.CoreCompileInputs.cache
+D:\bootstapper\NanoBootstapper\obj\Release\NanoBootstrapper.exe
+D:\bootstapper\NanoBootstapper\obj\Release\NanoBootstrapper.pdb
