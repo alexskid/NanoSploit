@@ -3,7 +3,6 @@ using System.Drawing;
 using System.Windows.Forms;
 using Siticone.UI.WinForms;
 using NanoPages;
-using Zorara;
 using System.Threading;
 
 namespace NanoForm
@@ -35,21 +34,23 @@ namespace NanoForm
 
         private void siticoneButton1_Click(object sender, EventArgs e)
         {
-            CoreFunctions.SetAutoInject(false);
-            CoreFunctions.KillRoblox();
+            Zorara.CoreFunctions.KillRoblox();
             Application.Exit();
         }
 
         private void checkState_Tick(object sender, EventArgs e)
         {
-            CoreFunctions.SetAutoInject(true);
-            bool isInjected = CoreFunctions.IsInjected();
-            bool isRobloxOpen = CoreFunctions.IsRobloxOpen();
-            if (isInjected)
+            bool RobloxOpen = Zorara.CoreFunctions.IsRobloxOpen();
+            bool XenoInjected = Zorara.CoreFunctions.IsInjected();
+            if (RobloxOpen)
             {
-                statusLabel.Text = "online";
-                statusLabel.ForeColor = Color.LightGreen;
-                SwitchToMainPage();
+                Zorara.CoreFunctions.Inject();
+                if (XenoInjected)
+                {
+                    statusLabel.Text = "online";
+                    statusLabel.ForeColor = Color.LightGreen;
+                    SwitchToMainPage();
+                }
             }
             else
             {
@@ -103,7 +104,7 @@ namespace NanoForm
                 MessageBox.Show("Shutting down...", "NanoMultiRoblox", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 if (MultiBLOX.WaitOne(0))
                 {
-                    CoreFunctions.KillRoblox();
+                    Zorara.CoreFunctions.KillRoblox();
                     MultiBLOX.ReleaseMutex();
                 }
             }
