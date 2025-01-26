@@ -13,7 +13,7 @@ namespace NanoPages
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            Process.Start("https://site248760110.fo.team/");
         }
 
         private void siticoneButton13_Click(object sender, EventArgs e)

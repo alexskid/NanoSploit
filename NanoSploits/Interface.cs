@@ -34,30 +34,31 @@ namespace NanoForm
 
         private void siticoneButton1_Click(object sender, EventArgs e)
         {
-            Zorara.CoreFunctions.KillRoblox();
             Application.Exit();
         }
 
         private void checkState_Tick(object sender, EventArgs e)
         {
-            bool RobloxOpen = Zorara.CoreFunctions.IsRobloxOpen();
-            bool XenoInjected = Zorara.CoreFunctions.IsInjected();
-            if (RobloxOpen)
+            bool isRobloxOpen = ForlornApi.Api.IsRobloxOpen();
+            bool isXenoInjected = ForlornApi.Api.IsInjected();
+
+            if (isRobloxOpen)
             {
-                Zorara.CoreFunctions.Inject();
-                if (XenoInjected)
-                {
-                    statusLabel.Text = "online";
-                    statusLabel.ForeColor = Color.LightGreen;
-                    SwitchToMainPage();
-                }
+                ForlornApi.Api.Inject();
+                UpdateStatusLabel(isXenoInjected ? Color.LightGreen : Color.Firebrick, "⚫");
+                SwitchToMainPage();
             }
             else
             {
-                statusLabel.Text = "offline";
-                statusLabel.ForeColor = Color.Firebrick;
+                UpdateStatusLabel(Color.Firebrick, "⚫");
                 SwitchToHomePage();
             }
+        }
+
+        private void UpdateStatusLabel(Color color, string text)
+        {
+            statusLabel.Text = text;
+            statusLabel.ForeColor = color;
         }
 
         private void SwitchToMainPage()
@@ -104,7 +105,7 @@ namespace NanoForm
                 MessageBox.Show("Shutting down...", "NanoMultiRoblox", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 if (MultiBLOX.WaitOne(0))
                 {
-                    Zorara.CoreFunctions.KillRoblox();
+                    ForlornApi.Api.KillRoblox();
                     MultiBLOX.ReleaseMutex();
                 }
             }

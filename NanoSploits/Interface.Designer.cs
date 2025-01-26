@@ -45,7 +45,7 @@
             // 
             // dragPanel
             // 
-            this.dragPanel.BackColor = System.Drawing.SystemColors.Highlight;
+            this.dragPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.dragPanel.Controls.Add(this.statusLabel);
             this.dragPanel.Controls.Add(this.siticoneButton3);
             this.dragPanel.Controls.Add(this.siticoneButton2);
@@ -66,14 +66,14 @@
             // statusLabel
             // 
             this.statusLabel.AutoSize = true;
-            this.statusLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F);
+            this.statusLabel.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statusLabel.ForeColor = System.Drawing.Color.DarkRed;
-            this.statusLabel.Location = new System.Drawing.Point(112, 14);
+            this.statusLabel.Location = new System.Drawing.Point(13, 14);
             this.statusLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(53, 20);
+            this.statusLabel.Size = new System.Drawing.Size(30, 20);
             this.statusLabel.TabIndex = 4;
-            this.statusLabel.Text = "offline";
+            this.statusLabel.Text = "⚫";
             // 
             // siticoneButton3
             // 
@@ -82,10 +82,10 @@
             this.siticoneButton3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.siticoneButton3.CheckedState.Parent = this.siticoneButton3;
             this.siticoneButton3.CustomImages.Parent = this.siticoneButton3;
-            this.siticoneButton3.FillColor = System.Drawing.SystemColors.Highlight;
+            this.siticoneButton3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.siticoneButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.siticoneButton3.ForeColor = System.Drawing.Color.White;
-            this.siticoneButton3.HoveredState.FillColor = System.Drawing.Color.CornflowerBlue;
+            this.siticoneButton3.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
             this.siticoneButton3.HoveredState.Parent = this.siticoneButton3;
             this.siticoneButton3.Location = new System.Drawing.Point(449, 0);
             this.siticoneButton3.Margin = new System.Windows.Forms.Padding(2);
@@ -103,12 +103,12 @@
             this.siticoneButton2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.siticoneButton2.CheckedState.Parent = this.siticoneButton2;
             this.siticoneButton2.CustomImages.Parent = this.siticoneButton2;
-            this.siticoneButton2.FillColor = System.Drawing.SystemColors.Highlight;
+            this.siticoneButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.siticoneButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.siticoneButton2.ForeColor = System.Drawing.Color.White;
-            this.siticoneButton2.HoveredState.FillColor = System.Drawing.Color.CornflowerBlue;
+            this.siticoneButton2.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
             this.siticoneButton2.HoveredState.Parent = this.siticoneButton2;
-            this.siticoneButton2.Location = new System.Drawing.Point(566, 0);
+            this.siticoneButton2.Location = new System.Drawing.Point(567, 0);
             this.siticoneButton2.Margin = new System.Windows.Forms.Padding(2);
             this.siticoneButton2.Name = "siticoneButton2";
             this.siticoneButton2.ShadowDecoration.Parent = this.siticoneButton2;
@@ -121,7 +121,7 @@
             // 
             this.siticoneButton1.CheckedState.Parent = this.siticoneButton1;
             this.siticoneButton1.CustomImages.Parent = this.siticoneButton1;
-            this.siticoneButton1.FillColor = System.Drawing.SystemColors.Highlight;
+            this.siticoneButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.siticoneButton1.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.siticoneButton1.ForeColor = System.Drawing.Color.White;
             this.siticoneButton1.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -140,7 +140,7 @@
             this.headLabel.AutoSize = true;
             this.headLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.headLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.headLabel.Location = new System.Drawing.Point(8, 14);
+            this.headLabel.Location = new System.Drawing.Point(47, 13);
             this.headLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.headLabel.Name = "headLabel";
             this.headLabel.Size = new System.Drawing.Size(103, 22);
@@ -174,6 +174,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(737, 445);
             this.Controls.Add(this.placeholder);
             this.Controls.Add(this.dragPanel);

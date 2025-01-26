@@ -41,10 +41,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Desktop\Nano\Release\AceWinforms.dll</HintPath>
     </Reference>
-    <Reference Include="Fluxx">
-      <HintPath>..\..\Fluxus\Fluxus\Fluxx.dll</HintPath>
+    <Reference Include="ForlornApi">
+      <HintPath>..\..\ForlornApi\ForlornApi.dll</HintPath>
     </Reference>
-    <Reference Include="Siticone.UI">
+    <Reference Include="Siticone.UI, Version=1.0.0.3, Culture=neutral, PublicKeyToken=da23b5286e22db85, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Desktop\Nano\Release\Siticone.UI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
