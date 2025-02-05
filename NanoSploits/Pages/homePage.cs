@@ -31,5 +31,10 @@ namespace NanoPages
             //    MessageBox.Show("Action aborted", "NanoSploit", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //}
         }
+
+        private void homePage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

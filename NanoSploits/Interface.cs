@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using Siticone.UI.WinForms;
 using NanoPages;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace NanoForm
 {
@@ -11,23 +12,37 @@ namespace NanoForm
     {
         private mainPage mainPageInstance;
         private homePage homePageInstance;
-        private Mutex MultiBLOX;
+        private Mutex multiBloxMutex;
+        private System.Windows.Forms.Timer checkStateTimer;
+
         public Interface()
         {
             InitializeComponent();
-            checkState = new System.Windows.Forms.Timer();
-            checkState.Interval = 1000;
-            checkState.Tick += checkState_Tick;
-            checkState.Start();
+
+            DialogResult updateBox = MessageBox.Show("This version of NanoSploit is no longer supported!\nPlease, download lasest version", "NanoSploit Recode", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (updateBox == DialogResult.OK) {
+                System.Diagnostics.Process.Start("https://getnano.online");
+                System.Diagnostics.Process.Start("https://nano4free.t.me");
+            }
+
+            checkStateTimer = new System.Windows.Forms.Timer
+            {
+                Interval = 1500 
+            };
+            checkStateTimer.Tick += CheckState_Tick;
+            checkStateTimer.Start();
+
             homePageInstance = new homePage();
             ChangeControl(homePageInstance);
-            MultiBLOX = new Mutex(false, "ROBLOX_singletonMutex");
+
+            multiBloxMutex = new Mutex(false, "ROBLOX_singletonMutex");
         }
         private void ChangeControl(UserControl userControl)
         {
+            if (userControl == null) return;
+
             userControl.Dock = DockStyle.Fill;
             userControl.BackColor = Color.Transparent;
-            userControl.BringToFront();
             placeholder.Controls.Clear();
             placeholder.Controls.Add(userControl);
         }
@@ -37,21 +52,35 @@ namespace NanoForm
             Application.Exit();
         }
 
-        private void checkState_Tick(object sender, EventArgs e)
+        private void CheckState_Tick(object sender, EventArgs e)
         {
-            bool isRobloxOpen = ForlornApi.Api.IsRobloxOpen();
-            bool isXenoInjected = ForlornApi.Api.IsInjected();
-
-            if (isRobloxOpen)
+            try
             {
-                ForlornApi.Api.Inject();
-                UpdateStatusLabel(isXenoInjected ? Color.LightGreen : Color.Firebrick, "⚫");
-                SwitchToMainPage();
+                bool isXenoInjected = NanoAPI.MainFunctions.IsInjected();
+                bool IsRobloxOpen = NanoAPI.MainFunctions.IsRobloxOpen();
+                if (IsRobloxOpen)
+                {
+                    Task.Delay(5000);
+                    if (!isXenoInjected)
+                    {
+                        NanoAPI.MainFunctions.AttachAPI();
+                    }
+                    else
+                    {
+                        UpdateStatusLabel(isXenoInjected ? Color.LightGreen : Color.Firebrick, "⚫");
+                        SwitchToMainPage();
+                    }
+                }
+                else
+                {
+                    UpdateStatusLabel(Color.Firebrick, "⚫");
+                    SwitchToHomePage();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                UpdateStatusLabel(Color.Firebrick, "⚫");
-                SwitchToHomePage();
+                // Log or handle exceptions gracefully
+                MessageBox.Show($"An error occurred while checking Roblox state: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -63,12 +92,13 @@ namespace NanoForm
 
         private void SwitchToMainPage()
         {
-            if (mainPageInstance == null || !placeholder.Controls.Contains(mainPageInstance))
+            if (mainPageInstance == null)
             {
-                if (mainPageInstance == null)
-                {
-                    mainPageInstance = new mainPage();
-                }
+                mainPageInstance = new mainPage();
+            }
+
+            if (!placeholder.Controls.Contains(mainPageInstance))
+            {
                 ChangeControl(mainPageInstance);
             }
         }
@@ -81,35 +111,43 @@ namespace NanoForm
             }
         }
 
-
         private void siticoneButton2_Click(object sender, EventArgs e)
         {
-            if (siticoneButton2.Checked) { TopMost = true; }
-            else { TopMost = false; }
+            TopMost = siticoneButton2.Checked;
         }
 
         private void siticoneButton3_Click(object sender, EventArgs e)
         {
-            if (siticoneButton3.Checked) {
-                if (MultiBLOX.WaitOne(0))
+            try
+            {
+                if (siticoneButton3.Checked)
                 {
-                    MessageBox.Show("MultiRoblox is started! [WARNING: CAN INCLUDE A BUGS]", "NanoMultiRoblox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Attempt to acquire the mutex
+                    if (multiBloxMutex.WaitOne(0))
+                    {
+                        MessageBox.Show("MultiRoblox is started! [WARNING: CAN INCLUDE BUGS]", "NanoMultiRoblox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Close Roblox before enabling MultiRoblox!", "NanoMultiRoblox", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        siticoneButton3.Checked = false;
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Close roblox before enable!", "NanoMultiRoblox", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    siticoneButton3.Checked = false;
+                    MessageBox.Show("Shutting down MultiRoblox...", "NanoMultiRoblox", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    if (multiBloxMutex.WaitOne(0))
+                    {
+                        NanoAPI.MainFunctions.KillRoblox();
+                        multiBloxMutex.ReleaseMutex();
+                    }
                 }
             }
-            else {
-                MessageBox.Show("Shutting down...", "NanoMultiRoblox", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                if (MultiBLOX.WaitOne(0))
-                {
-                    ForlornApi.Api.KillRoblox();
-                    MultiBLOX.ReleaseMutex();
-                }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
-
 }

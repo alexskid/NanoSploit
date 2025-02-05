@@ -41,8 +41,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Desktop\Nano\Release\AceWinforms.dll</HintPath>
     </Reference>
-    <Reference Include="ForlornApi">
-      <HintPath>..\..\ForlornApi\ForlornApi.dll</HintPath>
+    <Reference Include="NanoAPI, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\source\repos\RexUI\RexUI\bin\Debug\NanoAPI.dll</HintPath>
     </Reference>
     <Reference Include="Siticone.UI, Version=1.0.0.3, Culture=neutral, PublicKeyToken=da23b5286e22db85, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

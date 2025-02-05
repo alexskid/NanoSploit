@@ -38,7 +38,6 @@
             this.headLabel = new System.Windows.Forms.Label();
             this.siticoneDragControl = new Siticone.UI.WinForms.SiticoneDragControl(this.components);
             this.placeholder = new Siticone.UI.WinForms.SiticonePanel();
-            this.checkState = new System.Windows.Forms.Timer(this.components);
             this.siticoneElipse = new Siticone.UI.WinForms.SiticoneElipse(this.components);
             this.dragPanel.SuspendLayout();
             this.SuspendLayout();
@@ -161,10 +160,6 @@
             this.placeholder.Size = new System.Drawing.Size(737, 398);
             this.placeholder.TabIndex = 1;
             // 
-            // checkState
-            // 
-            this.checkState.Tick += new System.EventHandler(this.checkState_Tick);
-            // 
             // siticoneElipse
             // 
             this.siticoneElipse.BorderRadius = 10;
@@ -198,7 +193,6 @@
         private Siticone.UI.WinForms.SiticoneButton siticoneButton2;
         private Siticone.UI.WinForms.SiticoneDragControl siticoneDragControl;
         private Siticone.UI.WinForms.SiticonePanel placeholder;
-        private System.Windows.Forms.Timer checkState;
         private Siticone.UI.WinForms.SiticoneButton siticoneButton3;
         private System.Windows.Forms.Label statusLabel;
         private Siticone.UI.WinForms.SiticoneElipse siticoneElipse;
